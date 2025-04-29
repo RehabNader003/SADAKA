@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صدقة جارية على روح محمد سعيد لطفي</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/font-quran@2.0.0/dist/quran.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans Arabic', sans-serif;
+      background-color: #f1f5f9;
+      color: #1a202c;
+    }
+    .hero {
+      background-image: linear-gradient(to bottom, rgba(0, 128, 128, 0.5), rgba(0, 128, 128, 0.5)), url('https://source.unsplash.com/random/1600x900/?mosque');
+      background-size: cover;
+      background-position: center;
+    }
+    .card {
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    #content-area {
+      display: none;
+    }
+    #content-area.active {
+      display: block;
+    }
+    .quran-container {
+      background-color: #1a202c;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+    .surah-header {
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 2px solid #d4af37;
+      border-radius: 0.5rem;
+      position: relative;
+    }
+    .quran-text {
+      font-family: 'Traditional Arabic', 'Noto Sans Arabic', sans-serif;
+      font-size: 1.5rem;
+      line-height: 2.5;
+      color: #fff;
+      display: inline;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    .verse {
+      display: inline;
+      position: relative;
+    }
+    .verse::after {
+      content: '۞';
+      display: inline;
+      font-size: 1.2rem;
+      color: #d4af37;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    .verses-container {
+      text-align: center;
+      direction: rtl;
+    }
+    button {
+      background-color: #1db9d8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #1e40af;
+    }
+    .dhikr-counter {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+      color: #1d4ed8;
+    }
+    .dhikr-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1rem;
+    }
+    .separator {
+      text-align: center;
+      color: #1d4ed8;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-teal-700 text-black text-center py-6">
+    <h1 class="text-3xl font-bold">صدقة جارية على روح محمد سعيد لطفي</h1>
+    <p class="mt-2 text-lg">ندعوكم للدعاء له بالرحمة والمغفرة</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <!-- Welcome Section -->
+    <section class="hero text-white text-center py-16 rounded-lg shadow-lg mb-8">
+      <h2 class="text-2xl font-semibold">السَلٱمٌ عـَلـْيكمّ ۈرحـْمّـٌة ٱللـّہ ﯙبُركـّاتہ</h2>
+      <p class="mt-4 text-lg max-w-2xl mx-auto ">
+        هذا الموقع صدقة جارية على روح المغفور له بإذن الله محمد سعيد لطفي. نسألكم الدعاء له بالرحمة والمغفرة، ونشجعكم على الاستفادة من المحتوى الديني ومشاركته ليزيد الأجر.
+      </p>
+      <h2 class="mt-4 text-2xl font-semibold">الدعاء   له</h2>
+      <p class="mt-4 text-lg max-w-2xl mx-auto font-semibold ">
+        اللهم اغفر له, وارحمه، وعافه, واعفُ عنه, وأكرم نُزُلَه, ووسِّع مُدْخَلَه, واغسله بالماء والثَّلج والبَرَد
+        اللهم أبدله دارًا خيرًا من داره، وأهلًا خيرًا من أهله، وأدخله الجنة، وأعذه من عذاب القبر، ومن عذاب النار,
+        اللهم اجعل قبره روضة من رياض الجنة، ولا تجعله حفرة من حفر النار, 
+         اللهمّ إنّه صبر على البلاء فلم يجزع، فامنحه درجة الصّابرين، الذين يوفّون أجورهم بغير حساب واجعل آخر عذابه عذاب الدنيا.
+
+      </p>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <div class="card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer" onclick="showQuran()">
+        <h3 class="text-xl font-bold text-teal-700">القرآن الكريم</h3>
+        <p class="mt-2 text-gray-800">اختر سورة لقراءتها</p>
+      </div>
+      <div class="card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer" onclick="showSupplications()">
+        <h3 class="text-xl font-bold text-teal-700">دعاء</h3>
+        <p class="mt-2 text-gray-800">مجموعة من الأدعية المأثورة</p>
+      </div>
+      <div class="card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer" onclick="showRemembrances()">
+        <h3 class="text-xl font-bold text-teal-700">الأذكار</h3>
+        <p class="mt-2 text-gray-800">أذكار الصباح والمساء</p>
+      </div>
+      <div class="card bg-white p-6 rounded-lg shadow-md text-center cursor-pointer" onclick="showCounter()">
+        <h3 class="text-xl font-bold text-teal-700">عداد التسبيح</h3>
+        <p class="mt-2 text-gray-800">سبح بسهولة وأهدِ الثواب</p>
+      </div>
+    </section>
+
+    <!-- Content Area -->
+    <section id="content-area" class="bg-white p-6 rounded-lg shadow-md">
+      <h2 id="content-title" class="text-2xl font-bold text-teal-700 mb-4"></h2>
+      <div id="content-body" class="text-gray-800">
+        <p class="text-lg text-center mb-6 text-teal-700 font-semibold">جميع الأذكار والتسابيح هدية وصدقة جارية على روح محمد سعيد لطفي</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-teal-700 text-black text-center py-4">
+    <p>صدقة جارية على روح محمد سعيد لطفي - شارك الموقع ليزيد الأجر</p>
+    <div class="mt-2">
+      <button onclick="navigator.share({title: 'صدقة جارية', url: window.location.href})" class="text-white underline hover:text-gray-200">مشاركة الموقع</button>
+    </div>
+  </footer>
+
+  <script>
+    // Counter functionality
+    function decrementCounter(id, maxCount) {
+      const counterElement = document.getElementById(id);
+      if (!counterElement) return;
+      
+      let currentCount = parseInt(counterElement.innerText);
+      if (isNaN(currentCount)) return;
+      
+      if (currentCount > 0) {
+        currentCount--;
+        counterElement.innerText = currentCount;
+        
+        if (currentCount === 0) {
+          counterElement.innerText = "تم التسبيح";
+          counterElement.style.color = "green";
+        }
+      }
+    }
+
+    function resetCounter(id, maxCount) {
+      const counterElement = document.getElementById(id);
+      if (!counterElement) return;
+      
+      counterElement.innerText = maxCount;
+      counterElement.style.color = "#1d4ed8";
+    }
+
+    // Content display functions
+    function showContent(title, body) {
+      const contentArea = document.getElementById('content-area');
+      const contentTitle = document.getElementById('content-title');
+      const contentBody = document.getElementById('content-body');
+
+      contentTitle.innerText = title;
+      contentBody.innerHTML = body;
+      contentArea.classList.add('active');
+      contentArea.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showQuran() {
+      fetch('https://api.alquran.cloud/v1/meta')
+        .then(response => response.json())
+        .then(data => {
+          const surahs = Object.values(data.data.surahs.references);
+          let dropdown = `
+            <p class="text-lg text-center mb-6 text-teal-700 font-semibold">اقرأ وأهدِ الثواب لروح محمد سعيد لطفي</p>
+            <label for="surah-select" class="block text-lg font-semibold mb-2">اختر سورة:</label>
+            <select id="surah-select" class="w-full p-2 border rounded-lg mb-4">
+              ${surahs.map(surah => `<option value="${surah.number}">${surah.name} (${surah.englishName})</option>`).join('')}
+            </select>
+            <button onclick="fetchSurah()" class="bg-teal-700 text-white px-6 py-3 rounded-lg hover:bg-teal-800 text-lg font-semibold">عرض السورة</button>
+            <div id="surah-content" class="mt-4"></div>
+          `;
+          showContent('القرآن الكريم', dropdown);
+        })
+        
+        .catch(error => {
+          console.error('Error fetching Surah list:', error);
+          showContent('القرآن الكريم', '<p>حدث خطأ أثناء جلب قائمة السور. حاول مرة أخرى لاحقًا.</p>');
+        });
+        
+    }
+
+    function fetchSurah() {
+      const surahNumber = document.getElementById('surah-select').value;
+      fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/ar`)
+        .then(response => response.json())
+        .then(data => {
+          const verses = data.data.ayahs.map(ayah => `
+            <span class="verse">
+              <span class="quran-text">${ayah.text}</span>
+            </span>
+          `).join('');
+          const body = `
+            <p class="mt-4 text-lg font-semibold">اقرأ السورة وأهدِ ثوابها لروح محمد سعيد لطفي.</p>
+            <div class="quran-container">
+              <div class="surah-header">${data.data.name}</div>
+              <div class="verses-container">${verses}</div>
+            </div>
+          `;
+          document.getElementById('surah-content').innerHTML = body;
+        })
+        .catch(error => {
+          console.error('Error fetching Surah:', error);
+          document.getElementById('surah-content').innerHTML = '<p>حدث خطأ أثناء جلب السورة. حاول مرة أخرى لاحقًا.</p>';
+        });
+    }
+
+    function showSupplications() {
+      const supplications = [
+        { text: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللّٰهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ" },
+        { text: "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَاهْدِنِي وَعَافِنِي وَارْزُقْنِي" },
+        { text: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ" },
+        { text: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى" },
+        { text: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعِفَّةَ وَالْعَافِيَةَ" },
+        { text: "اللهمَّ ربُّ السَّموات السَّبع، وربُّ الأرض ورب كلِّ شيء، اقض حاجتي وسهل لي أمري، يا الله، لا ملجأ ولا منجا منك إلَّا إليك. اللهمَّ ليس لنا سواك، ولا مبتغى لنا إلَّا رضاك، أدعوك وأتوجه إليك وأستغيثك، أن تُيسر لي أموري كلَّها، وتفتح لي أبواب الخير عاجله وآجله" },
+        { text: "اللهم إني أسألك بأنك أنت الله مالك الملك وأنك على كل شيء قدير" },
+        { text: "اللهم يا ذا الجلال و الإكرام يا حي يا قيوم ندعوك باسمك الأعظم الذي إذا دعيت به أجبت" },
+        { text: "اللهم اختر لنا طريقًا يسعدنا، طريقًا لا يشقي قلوبنا ولا يؤذي عيوننا، طريقًا ترضاه لنا ثم تُرضينا به يارب" },
+        { text: "اللهم ارزقنا فرحة لا تسعها الدنيا وَمَن عليها، وَعوِّضنا بما هو خيرٌ لنا" },
+        { text: "اللهم إنَّا نسألك أن تغفر لنا ذنوبنا كلها، صغيرها وكبيرها، ما نسيناه منها وما لم ننساه" },
+        { text: "اللهم ابعد عنَّا من يغتابنا، ومن يكرهنا، ومن يخون طيبتنا، ومن يستغلّ محبَّتنا، ومن أراد بنا بسوء رد كيده في نحره واشغله بنفسه وابعده عنا" },
+        { text: "اللهم إنَّا نسألك عفوًا، و نسألك جبرًا وإن كُنّا لا نستحقّ يا الله" },
+        { text: "اللهم اني اسالك من خير ما سألك السائلون في عرفة جميعا منذ خلقتها" },
+        { text: "رَبِّ هَبْ لِي مِن لَّدُنْكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاء" },
+        { text: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا" },
+        { text: "اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا، وَلَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ، فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ وَارْحَمْنِي إِنَّك أَنْتَ الْغَفُورُ الرَّحِيمُ" },
+        { text: "رَبِّ اغْفِرْ لِي خَطِيئَتِي وَجَهْلِي وَإِسْرَافِي فِي أَمْرِي كُلِّهِ وَمَا أَنْتَ أَعْلَمُ بِهِ مِنِّي، اللَّهُمَّ اغْفِرْ لِي خَطَايَايَ وَعَمْدِي وَجَهْلِي وَهَزْلِي، وَكُلُّ ذَلِكَ عِنْدِي، اللَّهُمَّ اغْفِرْ لِي مَا قَدَّمْتُ وَمَا أَخَّرْتُ وَمَا أَسْرَرْتُ وَمَا أَعْلَنْتُ أَنْتَ الْمُقَدِّمُ وَأَنْتَ الْمُؤَخِّرُ وَأَنْتَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ" },
+        { text: "يا من لا تضيع ودائعُه: استودعتك ديني فلا ألقاك إلا مسلمًا موحدًا. استودعتك إيماني فلا ألقاك إلا مؤمنًا مُخبتًا. استودعتك الصالحَ من عملي فلا ألقاك به إلا وهو لوجهك خالصًا. استودعتك قلبي فلا يلقاك إلا سليمًا طاهرًا. استودعتك نفسي فلا تلقاك إلا مطمئنةً بجوار سيد الورىٰ. استودعتك قبري فلا تجعله حفرة من حفر النيران، وآنسني في وحشتي واجعل قبري روضة من رياض الجنة. استودعتك مقعدي في الجنة لأراه في قبري مستبشرًا. فأنت أرحمُ الراحمين وأنت خيرٌ حافظًا" },
+        { text: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَالْعَجْزِ وَالْكَسَلِ وَالْجُبْنِ وَالْبُخْلِ وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ" },
+        { text: "اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ" },
+        { text: "اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إلَِهَ إلَِّا أَنْتَ، اللَّهُمَّ إنِِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، اللَّهُمَّ إنِِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَهَ إِلَّا أَنْتَ" },
+        { text: "رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ، وَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ، وَامْكُرْ لِي وَل َاتَمْكُرْ عَلَيَّ، وَاهْدِنِي وَيَسِّرِ الْهُدَى لِي، وَانْصُرْنِي عَلَى مَنْ بَغَى عَلَيَّ، رَبِّ اجْعَلْنِي لَكَ شَكَّارًا، لَكَ ذَكَّارًا، لَكَ رَهَّابًا، لَكَ مِطْوَاعًا، لَكَ مُخْبِتًا إِلَيْكَ أَوَّاهًا مُنِيبًا، رَبِّ تَقَبَّلْ تَوْبَتِي وَاغْسِلْ حَوْبَتِي وَأَجِبْ دَعْوَتِي وَثَبِّتْ حُجَّتِي وَسَدِّدْ لِسَانِي وَاهْدِ قَلْبِي وَاسْلُلْ سَخِيمَةَ صَدْرِي" },
+        { text: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الثَّبَاتَ فِي الأَمْرِ، وَالْعَزِيمَةَ عَلَى الرُّشْدِ، وَأَسْأَلُكَ مُوجِبَاتِ رَحْمَتكَِ، وَعَزَائمَِ مَغْفِرَتكَِ، وَأسَْألَكَُ شُكْرَ نعِْمَتكَِ، وَحُسْنَ عِباَدَتكَِ، وَأسَْألَكَُ قَلْبًا سَلِيمًا، وَلِسَانًا صَادِقًا، وَأَسْأَلُكَ مِنْ خَيْرِ مَا تَعْلَمُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا تَعْلَمُ، وَأَسْتَغْفِرُكَ لِمَا تَعْلَمُ، إِنَّكَ أَنْتَ عَلَّامُ الْغُيُوبِ" },
+        { text: "اللَّهُمَّ اجْعَلْ لِي فِي قَلْبِي نُورًا، وَفِي لِسَانِي نُورًا، وَفِي سَمْعِي نُورًا، وَفِي بَصَرِي نُورًا، وَمِنْ فَوْقِي نُورًا، وَمِنْ تَحْتِي نُورًا، وَعَنْ يَمِينِي نُورًا، وَعَنْ شِمَالِي نُورًا، وَمِنْ بَيْنِ يَدَيَّ نُورًا، وَمِنْ خَلْفِي نُورًا، وَاجْعَلْ فِي نَفْسِي نُورًا، وَأَعْظِمْ لِي نُورًا" },
+        { text: "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنَ الْخَيْرِ كُلِّهِ عَاجِلِهِ وَآجِلِهِ مَا عَلِمْتُ مِنْهُ وَمَا لَمْ أَعْلَم،ْ وَأَعُوذُ بِكَ مِنَ الشَّرِّ كُلِّهِ عَاجِلِهِ وَآجِلِهِ مَا عَلِمْتُ مِنْهُ وَمَا لَمْ أَعْلَمْ، اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ عَبْدُكَ وَنَبِيُّكَ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا عَاذَ بِهِ عَبْدُكَ وَنَبِيُّكَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَمَا قَرَّبَ إِلَيْهَا مِنْ قَوْلٍ أَوْ عَمَلٍ، وَأَعُوذُ بِكَ مِنَ النَّارِ وَمَا قَرَّبَ إِلَيْهَا مِنْ قَوْلٍ أَوْ عَمَلٍ وَأَسْأَلُكَ أَنْ تَجْعَلَ كُلَّ قَضَاءٍ قَضَيْتَهُ لِي خَيْرًا" },
+        { text: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ زَوَالِ نِعْمَتِكَ وَتَحَوُّلِ عَافِيَتِكَ وَفُجَاءَةِ نِقْمَتِكَ وَجَمِيعِ سَخَطِكَ" },
+        { text: "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ" },
+        { text: "رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَآ أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ" },
+        { text: "رَبِّ لَا تَذَرْنِي فَرْداً وَأَنتَ خَيْرُ الْوَارِثِينَ" },
+        { text: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ" },
+        { text: "رَّبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَن دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَلَا تَزِدِ الظَّالِمِينَ إِلَّا تَبَارًا" },
+      ];
+
+      let supplicationsList = supplications.map(supplication => `
+        <div class="dhikr-item">
+          <p class="text-lg">${supplication.text}</p>
+        </div>
+      `).join('');
+
+      const body = `
+        <h3 class="text-lg text-center mb-6 text-teal-700 font-semibold">ادعُ وأهدِ الثواب لروح محمد سعيد لطفي</h3>
+        ${supplicationsList}
+      `;
+      showContent('دعاء', body);
+    }
+
+    function showRemembrances() {
+      const body = `
+        <p class="text-lg text-center mb-6 text-teal-700 font-semibold">جميع الأذكار والتسابيح هدية وصدقة جارية على روح محمد سعيد لطفي</p>
+        
+        <div class="mb-6">
+          <label for="dhikr-type" class="block text-lg font-semibold mb-2">اختر نوع الأذكار:</label>
+          <select id="dhikr-type" class="w-full p-2 border rounded-lg mb-4" onchange="showSelectedDhikr()">
+            <option value="morning">أذكار الصباح</option>
+            <option value="evening">أذكار المساء</option>
+          </select>
+        </div>
+
+        <div id="morning-dhikr" class="mb-8">
+          <h3 class="text-xl font-bold text-teal-700 mb-4">أذكار الصباح</h3>
+          <div class="dhikr-item">
+            <p class="text-lg">أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ</p>
+            <p class="text-lg">ٱللَّهُ لَاۤ إِلَـٰهَ إِلَّا هُوَ ٱلۡحَیُّ ٱلۡقَیُّومُۚ لَا تَأۡخُذُهُۥ سِنَةࣱ وَلَا نَوۡمࣱۚ لَّهُۥ مَا فِی ٱلسَّمَـٰوَٰتِ وَمَا فِی ٱلۡأَرۡضِۗ مَن ذَا ٱلَّذِی یَشۡفَعُ عِندَهُۥۤ إِلَّا بِإِذۡنِهِۦۚ یَعۡلَمُ مَا بَیۡنَ أَیۡدِیهِمۡ وَمَا خَلۡفَهُمۡۖ وَلَا یُحِیطُونَ بِشَیۡءࣲ مِّنۡ عِلۡمِهِۦۤ إِلَّا بِمَا شَاۤءَۚ وَسِعَ كُرۡسِیُّهُ ٱلسَّمَـٰوَٰتِ وَٱلۡأَرۡضَۖ وَلَا یَـُٔودُهُۥ حِفۡظُهُمَاۚ وَهُوَ ٱلۡعَلِیُّ ٱلۡعَظِیمُ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌۢ</p>
+            <div id="morning1" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning1', 3)">ردد</button>
+            <button onclick="resetCounter('morning1', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ</p>
+            <div id="morning2" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning2', 3)">ردد</button>
+            <button onclick="resetCounter('morning2', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ النَّاسِ، إِلَهِ النَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ</p>
+            <div id="morning3" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning3', 3)">ردد</button>
+            <button onclick="resetCounter('morning3', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَصْـبَحْنا وَأَصْـبَحَ المُـلْكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذا اليوم وَخَـيرَ ما بَعْـدَه ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذا اليوم وَشَرِّ ما بَعْـدَه، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُ بِكَ مِنْ عَـذابٍ في النّـارِ وَعَـذابٍ في القَـبْر</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا ، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ النُـشُور</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">َأعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق</p>
+            <div id="morning16" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning16', 3)">ردد</button>
+            <button onclick="resetCounter('morning16', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلـى مُسْـلِم</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ إِنِّـي أَصْبَـحْتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك</p>
+            <div id="morning4" class="dhikr-counter">4</div>
+            <button onclick="decrementCounter('morning4', 4)">ردد</button>
+            <button onclick="resetCounter('morning4', 4)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ ما أَصْبَـحَ بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ. اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ</p>
+            <div id="morning5" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning5', 3)">ردد</button>
+            <button onclick="resetCounter('morning5', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم</p>
+            <div id="morning6" class="dhikr-counter">7</div>
+            <button onclick="decrementCounter('morning6', 7)">ردد</button>
+            <button onclick="resetCounter('morning6', 7)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِـرْكِه ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم</p>
+            <div id="morning7" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning7', 3)">ردد</button>
+            <button onclick="resetCounter('morning7', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً</p>
+            <div id="morning8" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning8', 3)">ردد</button>
+            <button onclick="resetCounter('morning8', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ</p>
+            <div id="morning9" class="dhikr-counter">4</div>
+            <button onclick="decrementCounter('morning9', 4)">ردد</button>
+            <button onclick="resetCounter('morning9', 4)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَصْبَـحْـنا وَأَصْبَـحْ المُـلكُ للهِ رَبِّ العـالَمـين ، اللَّهُـمَّ إِنِّـي أسْـأَلُـكَ خَـيرَ هـذا الـيَوْم ، فَـتْحَهُ ، وَنَصْـرَهُ ، وَنـورَهُ وَبَـرَكَتَـهُ ، وَهُـداهُ ، وَأَعـوذُ بِـكَ مِـنْ شَـرِّ ما فـيهِ وَشَـرِّ ما بَعْـدَه</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَصْبَـحْـنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ</p>
+            <div id="morning10" class="dhikr-counter">10</div>
+            <button onclick="decrementCounter('morning10', 10)">ردد</button>
+            <button onclick="resetCounter('morning10', 10)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه</p>
+            <div id="morning11" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('morning11', 3)">ردد</button>
+            <button onclick="resetCounter('morning11', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد</p>
+            <div id="morning12" class="dhikr-counter">10</div>
+            <button onclick="decrementCounter('morning12', 10)">ردد</button>
+            <button onclick="resetCounter('morning12', 10)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">سُبْحـانَ اللهِ وَبِحَمْـدِهِ</p>
+            <div id="morning13" class="dhikr-counter">100</div>
+            <button onclick="decrementCounter('morning13', 100)">ردد</button>
+            <button onclick="resetCounter('morning13', 100)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ</p>
+            <div id="morning14" class="dhikr-counter">100</div>
+            <button onclick="decrementCounter('morning14', 100)">ردد</button>
+            <button onclick="resetCounter('morning14', 100)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ</p>
+            <div id="morning15" class="dhikr-counter">100</div>
+            <button onclick="decrementCounter('morning15', 100)">ردد</button>
+            <button onclick="resetCounter('morning15', 100)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+        </div>
+
+        
+        <div id="evening-dhikr" class="mb-8" style="display: none;">
+          <h3 class="text-xl font-bold text-teal-700 mb-4">أذكار المساء</h3>
+          <div class="dhikr-item">
+            <p class="text-lg">أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ</p>
+            <p class="text-lg">ٱللَّهُ لَاۤ إِلَـٰهَ إِلَّا هُوَ ٱلۡحَیُّ ٱلۡقَیُّومُۚ لَا تَأۡخُذُهُۥ سِنَةࣱ وَلَا نَوۡمࣱۚ لَّهُۥ مَا فِی ٱلسَّمَـٰوَٰتِ وَمَا فِی ٱلۡأَرۡضِۗ مَن ذَا ٱلَّذِی یَشۡفَعُ عِندَهُۥۤ إِلَّا بِإِذۡنِهِۦۚ یَعۡلَمُ مَا بَیۡنَ أَیۡدِیهِمۡ وَمَا خَلۡفَهُمۡۖ وَلَا یُحِیطُونَ بِشَیۡءࣲ مِّنۡ عِلۡمِهِۦۤ إِلَّا بِمَا شَاۤءَۚ وَسِعَ كُرۡسِیُّهُ ٱلسَّمَـٰوَٰتِ وَٱلۡأَرۡضَۖ وَلَا یَـُٔودُهُۥ حِفۡظُهُمَاۚ وَهُوَ ٱلۡعَلِیُّ ٱلۡعَظِیمُ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ</p>
+            <p class="text-lg">آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. ** لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَا أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ</p>
+            <p class="text-lg">قُلْ هُوَ اللَّهُ أَحَدٌ، اللَّهُ الصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</p>
+            <div id="evening1" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening1', 3)">ردد</button>
+            <button onclick="resetCounter('evening1', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ</p>
+            <p class="text-lg">قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّالنَّفَّاثَاتِ فِي الْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ</p>
+            <div id="evening2" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening2', 3)">ردد</button>
+            <button onclick="resetCounter('evening2', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ</p>
+            <p class="text-lg">قُلْ أَعُوذُ بِرَبِّ النَّاسِ، مَلِكِ النَّاسِ، إِلَهِ النَّاسِ، مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ، الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ، مِنَ الْجِنَّةِ وَ النَّاسِ</p>
+            <div id="evening3" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening3', 3)">ردد</button>
+            <button onclick="resetCounter('evening3', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَمْسَيْـنا وَأَمْسـى المـلكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذهِ اللَّيْلَةِ وَخَـيرَ ما بَعْـدَهـا ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذهِ اللَّيْلةِ وَشَرَّ ما بَعْـدَهـا ، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُبِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهـمَّ أَنْتَ رَبِّي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً</p>
+            <div id="evening4" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening4', 3)">ردد</button>
+            <button onclick="resetCounter('evening4', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ إِنِّـي أَمسيتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلائِكَتِك ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك</p>
+            <div id="evening5" class="dhikr-counter">4</div>
+            <button onclick="decrementCounter('evening5', 4)">ردد</button>
+            <button onclick="resetCounter('evening5', 4)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ ما أَمسى بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم</p>
+            <div id="evening6" class="dhikr-counter">7</div>
+            <button onclick="decrementCounter('evening6', 7)">ردد</button>
+            <button onclick="resetCounter('evening6', 7)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم</p>
+            <div id="evening7" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening7', 3)">ردد</button>
+            <button onclick="resetCounter('evening7', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ بِكَ أَمْسَـينا وَبِكَ أَصْـبَحْنا، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ الْمَصِيرُ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَمْسَيْنَا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه</p>
+            <div id="evening8" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening8', 3)">ردد</button>
+            <button onclick="resetCounter('evening8', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ</p>
+            <div id="evening9" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening9', 3)">ردد</button>
+            <button onclick="resetCounter('evening9', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ إِنِّـي أَعـوذُبِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُبِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ</p>
+            <div id="evening10" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening10', 3)">ردد</button>
+            <button onclick="resetCounter('evening10', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلُنِي إلَى نَفْسِي طُرْفَةَ عَيْنٍ</p>
+            <div id="evening11" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening11', 3)">ردد</button>
+            <button onclick="resetCounter('evening11', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَمْسَيْنَا وَأَمْسَى الْمُلْكُ للهِ رَبُّ الْعَالَمَيْنِ، اللَّهُمَّ إِنَّي أسْأَلُكَ خَيْرَ هَذَه اللَّيْلَةِ فَتْحُهَا وَنُصَرُّهَا، وَنورَهُا و برَكَتَهُا، وَهُداهُا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فيهِا وَشَرَّ مَا بَعْدَهَا</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِـرْكِه ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم</p>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق</p>
+            <div id="evening12" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening12', 3)">ردد</button>
+            <button onclick="resetCounter('evening12', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد</p>
+            <div id="evening13" class="dhikr-counter">10</div>
+            <button onclick="decrementCounter('evening13', 10)">ردد</button>
+            <button onclick="resetCounter('evening13', 10)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ</p>
+            <div id="evening14" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening14', 3)">ردد</button>
+            <button onclick="resetCounter('evening14', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنْ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنْ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ، وَقَهْرِ الرِّجَالِ</p>
+            <div id="evening15" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening15', 3)">ردد</button>
+            <button onclick="resetCounter('evening15', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ</p>
+            <div id="evening16" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening16', 3)">ردد</button>
+            <button onclick="resetCounter('evening16', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">يا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ</p>
+            <div id="evening17" class="dhikr-counter">3</div>
+            <button onclick="decrementCounter('evening17', 3)">ردد</button>
+            <button onclick="resetCounter('evening17', 3)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلُّ شَيْءِ قَدِيرِ</p>
+            <div id="evening18" class="dhikr-counter">10</div>
+            <button onclick="decrementCounter('evening18', 10)">ردد</button>
+            <button onclick="resetCounter('evening18', 10)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلا أَنْتَ ، عَلَيْكَ تَوَكَّلْتُ ، وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ , مَا شَاءَ اللَّهُ كَانَ ، وَمَا لَمْ يَشَأْ لَمْ يَكُنْ ، وَلا حَوْلَ وَلا قُوَّةَ إِلا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ , أَعْلَمُ أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، وَأَنَّ اللَّهَ قَدْ أَحَاطَ بِكُلِّ شَيْءٍ عِلْمًا , اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي ، وَمِنْ شَرِّ كُلِّ دَابَّةٍ أَنْتَ آخِذٌ بِنَاصِيَتِهَا ، إِنَّ رَبِّي عَلَى صِرَاطٍ مُسْتَقِيمٍ</p>
+          </div>
+        </div>
+      `;
+      showContent('الأذكار', body);
+    }
+
+    function showCounter() {
+      const body = `
+              <p class="text-lg text-center mb-6 text-teal-700 font-semibold">جميع الأذكار والتسابيح هدية وصدقة جارية على روح محمد سعيد لطفي</p>
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-teal-700 mb-4">عداد التسبيح</h3>
+          <div class="dhikr-item">
+            <p class="text-lg">سبحان الله</p>
+            <div id="counter1" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter1', 33)">ردد</button>
+            <button onclick="resetCounter('counter1', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">الحمد لله</p>
+            <div id="counter2" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter2', 33)">ردد</button>
+            <button onclick="resetCounter('counter2', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg"> لا إلهَ إلاّ اللّهُ</p>
+            <div id="counter3" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter3', 33)">ردد</button>
+            <button onclick="resetCounter('counter3', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">الله أكبر</p>
+            <div id="counter5" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter5', 33)">ردد</button>
+            <button onclick="resetCounter('counter5', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">أسْتَغْفِرُ اللهَ</p>
+            <div id="counter6" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter6', 33)">ردد</button>
+            <button onclick="resetCounter('counter6', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+           <div class="dhikr-item">
+            <p class="text-lg">  سُبْحـانَ اللهِ وَبِحَمْـدِهِ</p>
+            <div id="counter7" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter7', 33)">ردد</button>
+            <button onclick="resetCounter('counter7', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+           <div class="dhikr-item">
+            <p class="text-lg">لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير</p>
+            <div id="counter8" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter8', 33)">ردد</button>
+            <button onclick="resetCounter('counter8', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد</p>
+            <div id="counter9" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter9', 33)">ردد</button>
+            <button onclick="resetCounter('counter9', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ</p>
+            <div id="counter10" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter10', 33)">ردد</button>
+            <button onclick="resetCounter('counter10', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+          <div class="dhikr-item">
+            <p class="text-lg">حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم</p>
+            <div id="counter4" class="dhikr-counter">33</div>
+            <button onclick="decrementCounter('counter4', 33)">ردد</button>
+            <button onclick="resetCounter('counter4', 33)" class="bg-red-500 hover:bg-red-600">إعادة تعيين</button>
+          </div>
+        </div>
+      `;
+      showContent('عداد التسبيح', body);
+    }
+
+    function showSelectedDhikr() {
+      const dhikrType = document.getElementById('dhikr-type').value;
+      const morningDhikr = document.getElementById('morning-dhikr');
+      const eveningDhikr = document.getElementById('evening-dhikr');
+
+      if (dhikrType === 'morning') {
+        morningDhikr.style.display = 'block';
+        eveningDhikr.style.display = 'none';
+      } else {
+        morningDhikr.style.display = 'none';
+        eveningDhikr.style.display = 'block';
+      }
+    }
+
+    // Initialize counters when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('.dhikr-counter');
+      counters.forEach(counter => {
+        const maxCount = parseInt(counter.innerText);
+        if (!isNaN(maxCount)) {
+          counter.innerText = maxCount;
+        }
+      });
+    });
+  </script>
+</body>
+</html> 
